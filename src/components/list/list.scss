@@ -1,0 +1,121 @@
+
+// responsive
+.list {
+  width: 100%;
+  margin-top: 10px;
+
+  .listTitle {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 50px;
+    // margin-top: 0%;
+  }
+
+  .wrapper {
+    position: relative;
+    // display: flex;
+    // align-items: center;
+    // overflow: hidden;
+
+    .sliderArrow {
+      width: 50px;
+      height: 100%;
+      background-color: rgba(22, 22, 22, 0.5);
+      color: white;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      cursor: pointer;
+      font-size: 20px;
+
+      &.left {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
+    }
+
+    .container {
+      margin-top: 10px;
+      margin-left: 50px;
+      display: flex;
+      width: max-content;
+      transform: translateX(0px);
+      transition: all 1s ease;
+    }
+  }
+
+  // ========= RESPONSIVE =========
+
+  // @media (max-width: 1024px) {
+  //   .listTitle {
+  //     margin-left: 30px;
+  //     font-size: 18px;
+  //   }
+
+  //   .wrapper {
+  //     .sliderArrow {
+  //       width: 40px;
+  //       font-size: 18px;
+  //     }
+
+  //     .container {
+  //       margin-left: 30px;
+  //     }
+  //   }
+  // }
+
+  // @media (max-width: 768px) {
+  //   .listTitle {
+  //     font-size: 16px;
+  //     margin-left: 20px;
+  //   }
+
+  //   .wrapper {
+  //     .sliderArrow {
+  //       width: 35px;
+  //       font-size: 16px;
+  //     }
+
+  //     .container {
+  //       margin-left: 20px;
+  //       gap: 5px;
+  //     }
+  //   }
+  // }
+
+  // @media (max-width: 480px) {
+  //   .listTitle {
+  //     font-size: 14px;
+  //     margin-left: 15px;
+  //   }
+
+  //   .wrapper {
+  //     .sliderArrow {
+  //       display: none; // Hide arrows on small screens to prevent overlap
+  //     }
+
+  //     .container {
+  //       margin-left: 15px;
+  //       overflow-x: auto;
+  //       scroll-snap-type: x mandatory;
+  //       -webkit-overflow-scrolling: touch;
+
+  //       & > * {
+  //         scroll-snap-align: start;
+  //       }
+  //     }
+  //   }
+  // }
+}
+
+
+
