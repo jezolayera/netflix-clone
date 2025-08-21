@@ -1,0 +1,188 @@
+// *{
+//     margin: 0 0;
+//     padding: 0 0;
+// }
+// .profile{
+//     display: flex;
+   
+// }
+
+// .profileRight{
+//     flex: 9;
+// }
+
+
+
+// .profileCover{
+//    height: 320px;
+//    position: relative; 
+// }
+
+// .profileCoverImg{
+//     width: 100%;
+//     height: 250px;
+//     object-fit: cover;
+// }
+
+// .profileUserImg{
+//     width: 150px;
+//     height: 150px;
+//     border-radius: 50%;
+//     object-fit: cover;
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     margin: auto;
+//     top: 150px;
+//     border: 3px solid white;
+// }
+
+// .profileInfo{
+//    display: flex;
+//    flex-direction: column;
+//    align-items: center;
+//    justify-content: center;
+// }
+
+// .profileInfoName{
+//     font-size: 24px;
+// }
+
+// .profileInfoDesc{
+//   font-weight: 300;
+// }
+
+// .profileRightBottom{
+//    display: flex;
+// }
+
+// Chatgpt
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.profile {
+    display: flex;
+}
+
+.profileRight {
+    flex: 9;
+}
+
+/* ================= PROFILE TOP ================= */
+.profileCover {
+    height: 320px;
+    position: relative; 
+}
+
+.profileCoverImg {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.profileUserImg {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 150px;
+    border: 3px solid white;
+}
+
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px; /* adjust spacing under profile image */
+}
+
+.profileInfoName {
+    font-size: 24px;
+}
+
+.profileInfoDesc {
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+}
+
+/* ================= PROFILE BOTTOM ================= */
+.profileRightBottom {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* ================== RESPONSIVE ================== */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .profileRightBottom {
+        flex-direction: column;
+    }
+
+    .profileUserImg {
+        width: 120px;
+        height: 120px;
+        top: 130px;
+    }
+
+    .profileInfoName {
+        font-size: 20px;
+    }
+
+    .profileInfoDesc {
+        font-size: 14px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+    }
+
+    .profileRight {
+        flex: unset;
+        width: 100%;
+    }
+
+    .profileRightBottom {
+        flex-direction: column;
+    }
+
+    .profileCover {
+        height: 220px;
+    }
+
+    .profileCoverImg {
+        height: 150px;
+    }
+
+    .profileUserImg {
+        width: 100px;
+        height: 100px;
+        top: 100px;
+    }
+
+    .profileInfo {
+        margin-top: 5px;
+    }
+
+    .profileInfoName {
+        font-size: 18px;
+    }
+
+    .profileInfoDesc {
+        font-size: 14px;
+    }
+}

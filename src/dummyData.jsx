@@ -1,0 +1,100 @@
+export const Users = [
+  {
+    id:1,
+    profilePicture:"assets/person/8.jpg",
+    username:"Toby Daniels",
+  },
+  {
+    id:2,
+    profilePicture:"assets/person/2.jpg",
+    username:"Sandra James",
+  },
+  {
+    id:3,
+    profilePicture:"assets/person/3.jpg",
+    username:"James Porter",
+  },
+  {
+    id:4,
+    profilePicture:"assets/person/4.jpg",
+    username:"Zeke Jesse",
+  },
+  {
+    id:5,
+    profilePicture:"assets/person/5.jpg",
+    username:"Pepper Tajada",
+  },
+  {
+    id:6,
+    profilePicture:"assets/person/6.jpg",
+    username:"Smith Thompson",
+  },
+  {
+    id:7,
+    profilePicture:"assets/person/7.jpg",
+    username:"Lovett Tims",
+  },
+];
+
+export const Posts =[
+  {
+    id:1,
+    desc:"Love For All, Hatred For None.",
+    photo:"assets/post/1.png",
+    date:"5 mins ago",
+    userId:1,
+    like:3,
+    comment:0,
+  },
+  {
+    id:2,
+    desc:"What's up, Guys!",
+    photo:"assets/post/2.png",
+    date:"3 mins ago",
+    userId:2,
+    like:2,
+    comment:2,
+  },
+  {
+    id:3,
+    desc:"Love y'all",
+    photo:"assets/post/3.png",
+    date:"15 mins ago",
+    userId:3,
+    like:13,
+    comment:19,
+  },
+  {
+    id:4,
+    photo:"assets/post/4.png",
+    date:"6 mins ago",
+    userId:4,
+    like:3,
+    comment:2,
+  },
+  {
+    id:5,
+    desc:"Better days ahead.",
+    photo:"assets/post/5.jpg",
+    date:"5 mins ago",
+    userId:5,
+    like:10,
+    comment:3,
+  },
+  {
+    id:6,
+    photo:"assets/post/6.png",
+    date:"8 mins ago",
+    userId:6,
+    like:30,
+    comment:19,
+  },
+  {
+    id:7,
+    photo:"assets/post/7.jpg",
+    date:"51 mins ago",
+    userId:7,
+    like:3,
+    comment:1,
+  },
+]

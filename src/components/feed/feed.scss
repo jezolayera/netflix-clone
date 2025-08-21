@@ -1,0 +1,31 @@
+// .feed{
+//     flex: 5.5;
+// }
+
+// .feedWrapper{
+//     padding: 20px;
+// }
+
+// Chatgpt
+
+.feed {
+    flex: 5.5;
+}
+
+.feedWrapper {
+    padding: 20px;
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .feedWrapper {
+        padding: 15px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .feedWrapper {
+        padding: 10px;
+    }
+}

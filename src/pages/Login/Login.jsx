@@ -1,30 +1,50 @@
-import "./login.scss"
+import'./login.scss';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function Login() {
+export default function Login({setUser}) {
+
+    const [email,setEmail] = useState("");
+    const [password,setPassword] = useState("");
+    const navigate = useNavigate();
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+
+        if(email && password) {
+            const loggedInUser = {email,username:"ZekeJesse"};
+            setUser(loggedInUser);
+            navigate("/");
+        } else{
+            alert("Please enter email and password");
+        }
+    };
+
+    const handleRegisterRedirect = () => {navigate("/register")}
+
   return (
-    <div className="login">
-       <div className="top">
-            <div className="wrapper">
-                <img className="logo" 
-                src="./Net.Img/Netflix.png" alt="" />
-                    
+    <div className='login'>
+        <div className="loginWrapper">
+            <div className="loginLeft">
+                <h3 className="loginLogo">Zekesocial</h3>
+                <span className="loginDesc">
+                    Connect with friends and the world around you on Zekesocial.
+                </span>
             </div>
-       </div>
-       <div className="container">
-        <form>
-          <h1>Sign In</h1>  
-          <input type="email" placeholder="Email or phone number"/>
-          <input type="passsword" placeholder="Password"/>
-          <button className="loginButton">Sign In</button>
-          <span>New to Netflix? <b>Sign up now.</b></span>
-          <small>
-            This page is protected by Google reCAPTCHA to ensure you're not 
-            a bot. <b>Learn more</b>.
-          </small>
-        </form>
-       </div>
-
+            <div className="loginRight">
+                <div className="loginBox">
+                    <input placeholder="Email" className='loginInput' value={email} 
+                    onChange={(e) => setEmail(e.target.value)}/>
+                    <input placeholder="Password" type='password' className='loginInput' value={password} 
+                    onChange={(e) => setPassword(e.target.value)}/>
+                    <button className='loginButton' onClick={handleLogin}>Log In</button>
+                    <span className='loginForgot'>Forgot Password?</span>
+                    <button className='loginRegisterButton' onClick={handleRegisterRedirect}>
+                        Create a New Account
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-  );
+  )
 }
-

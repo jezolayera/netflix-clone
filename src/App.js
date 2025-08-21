@@ -1,24 +1,39 @@
-import "./app.scss";
-import Login from "./pages/Login/Login";
+import Post from "./components/post/Post";
+import Login from "./pages/login/Login";
+import Profile from "./pages/profile/Profile";
 import Register from "./pages/register/Register";
 import Home from "./pages/home/Home";
-import Play from "./pages/Play/Play";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Watch from "./pages/watch/Watch";
+import {
+  Navigate,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+} from "react-router-dom";
+import { useState } from "react";
+
 function App() {
+  const [user, setUser] = useState(null);
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/watch" element={<Watch />} />
-        <Route path="/series" element={<Home type="series" />} />
-        <Route path="/movies" element={<Home type="movie" />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/play" element={<Play />} />
+        <Route
+          path="/login"
+          element={user ? <Navigate to="/" /> : <Login setUser={setUser} />}
+        />
+
+        <Route
+          path="/register"
+          element={user ? <Navigate to="/" /> : <Register setUser={setUser} />}
+        />
+
+        <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
+
+        <Route
+          path="/profile/:username"
+          element={user ? <Profile /> : <Navigate to="/login" />}
+        />
       </Routes>
     </Router>
   );
 }
-
 export default App;

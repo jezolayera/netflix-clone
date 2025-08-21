@@ -1,15 +1,18 @@
-import Featured from "../../components/featured/Featured";
-import Navbar from "../../components/navbar/Navbar";
-import "./home.scss";
-import List from "../../components/list/List";
+import Topbar from "../../components/topbar/Topbar"
+import Sidebar from "../../components/sidebar/Sidebar";
+import Feed from "../../components/feed/Feed";
+import Rightbar from "../../components/rightbar/Rightbar"
+import "./home.scss"
 
-export default function Home({type}) {
+export default function Home() {
   return (
-    <div className='home'>
-        <Navbar/> 
-      <Featured type={type}/>
-      <List/>
-      <List/>
-    </div>
-  )
+    <>
+      <Topbar/>
+      <div className="homeContainer">
+        <Sidebar/>
+        <Feed/>
+        <Rightbar/>
+      </div>
+    </>
+  );
 }

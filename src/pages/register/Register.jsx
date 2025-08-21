@@ -1,51 +1,58 @@
-import { useState } from "react";
-import { useRef } from "react";
-import "./register.scss"
+import'./register.scss';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
-export default function Register() {
+export default function Register({setUser}) {
+
+    const [username,setUsername] = useState("");
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
+    const navigate = useNavigate();
 
+    const handleLogin = (e) => {
+        e.preventDefault();
 
-    const emailRef = useRef();
-    const passwordRef = useRef();
-
-    const handleStart = () =>{
-        setEmail(emailRef.current.value)
+        if(username && email && password) {
+            const newUser = {username,email};
+            setUser(newUser);
+            navigate("/");
+        } else{
+            alert("Please fill all fields");
+        }
     };
-    const handleFinish = () =>{
-        setPassword(passwordRef.current.value)
-    }
+
+    const handleRegisterRedirect = () => {navigate("/login")}
+
+
 
   return (
-    <div className="register">
-       <div className="top">
-            <div className="wrapper">
-                <img className="logo" src="./Net.Img/Netflix.png" alt="" />
-                    
-                <button className="loginButton">Sign In</button>
+    <div className='login'>
+        <div className="loginWrapper">
+            <div className="loginLeft">
+                <h3 className="loginLogo">Zekesocial</h3>
+                <span className="loginDesc">
+                    Connect with friends and the world around you on Zekesocial.
+                </span>
             </div>
-       </div>
-       <div className="container">
-            <h1>Unlimited movies, TV shows, and more.</h1>
-            <h2>Watch anywhere. Cancel anytime.</h2>
-            <p>
-                Ready to watch? Enter your email to create or restart your membership.
-            </p>
-            
-            {!email ? (
-                <div className="input">
-                    <input type="email" placeholder="email address" ref={emailRef}/>
-                    <button className="registerButton" onClick={handleStart}>Get Started</button>
+            <div className="loginRight">
+                <div className="loginBox">
+                    <input placeholder="Username" className='loginInput' value={username} 
+                    onChange={(e) => setUsername(e.target.value)}/>
+                    <input placeholder="Email" className='loginInput' value={email} 
+                    onChange={(e) => setEmail(e.target.value)} />
+                    <input placeholder="Password" className='loginInput' value={password} 
+                    onChange={(e) => setPassword(e.target.value)}/>
+                    <input placeholder="Password Again" className='loginInput' value={password} 
+                    onChange={(e) => setPassword(e.target.value)}/>
+                    <button className='loginButton' onClick={handleRegisterRedirect}>Sign Up</button>
+                    <span className='loginForgot'>Forgot Password?</span>
+                    <button className='loginRegisterButton'>
+                        Log into Account
+                    </button>
                 </div>
-            ) : (
-                <form className="input">
-                    <input type="password" placeholder="password" ref={passwordRef}/>
-                    <button className="registerButton" onClick={handleFinish}>Start</button>
-                </form>)}
-       </div>
+            </div>
+        </div>
     </div>
-  );
+  )
 }
-
